@@ -1,7 +1,9 @@
 /*
 	Star Wireframe Animation
 	------------------------
-	Displays a large number of points on the body section of the page in which it is imported.
+	Displays a large number of points (stars) on the body section of the page in which it is imported.
+	Stars near to each other are connected by lines.
+	The mouse counts as a star, and other stars gravitate to it.
 	
 	Code adapted from a minified script originally found on Amateria [ http://amateria.smashthestack.org:89 ],
 	which was posted by an anonymous user. The original script has since been removed from the site.
