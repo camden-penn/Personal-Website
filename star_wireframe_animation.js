@@ -71,10 +71,8 @@
 						//	 gravitate star towards the mouse.
 						if(point === mouse_location && euclidean_dist_squared <= point.max){
 							is_near_mouse =true;
-							//star.x-=.03*delta_x;
 							star.x_velocity-=gravitational_pull*delta_x;
 							star.y_velocity-=gravitational_pull*delta_y;
-							//star.y-=.03*delta_y;
 						}
 						
 						//Calculate their proximity score.
