@@ -18,14 +18,14 @@ div[name="main-content"]{
 }
 .centered-div{
 	margin:auto;
-	text-align:center;
-	vertical-align:top;
+	text-align:center;	
 }
 .column{
 	width:380px;
 	display:inline-block;
 	padding:10px;
-	height:100%;
+	vertical-align:top;
+	
 }
 .section{
 	display:inline-block;
@@ -38,6 +38,12 @@ div[name="main-content"]{
 	border-color:#444444;
 	border-style:solid;
 	text-align:left;
+}
+.section img{
+	width:100%;
+}
+.img-frame{
+	padding:0px;
 }
 strong{
 	color:#00FFFF;
