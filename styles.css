@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Muli|Open+Sans|Roboto');
+.divider{
+	margin-bottom:	40px;
+	margin-top:		0px;
+	padding-left:	30px;
+	padding-top:	15px;
+	padding-bottom:	15px;
+	color: #FFFFFF;
+	background-color: #333333;
+	border-width:5px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-color:#444444;
+	border-style:solid;
+}
+.section{
+	display:inline-block;
+	margin:auto;
+	width:500px;
+	height:500px;
+	padding-left:	30px;
+	padding-top:	15px;
+	padding-bottom:	15px;
+	color: #FFFFFF;
+	background-color: #333333;
+	border-width:5px;
+	border-color:#444444;
+	border-style:solid;
+}
+body{
+	font-family: "Open Sans",Roboto, sans-serif;
+	margin:0px;
+}
+.spacer{
+	height:300px;
+}
+.image-container{
+	height:		fit-content;
+	overflow:	hidden;
+	max-height: 500px;
+}
+.image-container img{
+	width:		100%;
+	height:		auto;
+	/*max-height: inherit;*/
+}
+#header{
+	display:inline-block;
+	font-family: Muli, Roboto, sans-serif;
+	position: relative;
+	padding-left:	30px;
+	vertical-align:bottom;
+	height: 0px;
+	color:	#00FFFF;
+}
+#header span{
+	font-size: 	50px;
+	font-weight:bold;
+}
