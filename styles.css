@@ -19,11 +19,17 @@ div[name="main-content"]{
 .centered-div{
 	margin:auto;
 	text-align:center;
+	vertical-align:top;
+}
+.column{
+	width:380px;
+	display:inline-block;
+	padding:10px;
+	height:100%;
 }
 .section{
-	margin:10px;
 	display:inline-block;
-	width:350px;
+	margin-bottom:30px;
 	padding:20px;
 	padding-top:10px;
 	color: #FFFFFF;
@@ -36,7 +42,16 @@ div[name="main-content"]{
 strong{
 	color:#00FFFF;
 }
+.indented{
+	margin:0px;
+	padding-left:15px;
+}
 .section span:first-of-type{
+	/*Main section header*/
+	font-size:30px;
+	color:#00FFFF;
+}
+.divider span:first-of-type{
 	/*Main section header*/
 	font-size:30px;
 	color:#00FFFF;
@@ -66,4 +81,13 @@ body{
 #header span{
 	font-size: 	50px;
 	font-weight:bold;
+}
+.spacer{
+	height:150px;
+}
+.contact-mark{
+	margin-top:10px;
+	margin-right:20px;
+	height:30px;
+	width:30px;
 }
