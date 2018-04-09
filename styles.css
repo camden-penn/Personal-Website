@@ -53,15 +53,11 @@ strong{
 	margin:0px;
 	padding-left:15px;
 }
-.section span:first-of-type{
+h2{
 	/*Main section header*/
 	font-size:30px;
 	color:#00FFFF;
-}
-.divider span:first-of-type{
-	/*Main section header*/
-	font-size:30px;
-	color:#00FFFF;
+	margin:0px;
 }
 body{
 	font-family: "Open Sans",Roboto, sans-serif;
@@ -92,9 +88,50 @@ body{
 .spacer{
 	height:150px;
 }
+.half-size{
+	font-size:8px;
+}
 .contact-mark{
 	margin-top:10px;
 	margin-right:15px;
 	height:30px;
 	width:30px;
+}
+.inline-div{
+	display:inline-block;
+	margin-right:100px;
+	vertical-align:top;
+}
+.fancy-border{
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size:18px;
+	border-width: 1px 0px 1px 0px;
+	border-color: #DDDDDD;
+	border-style:solid;
+}
+a{
+	/* Don't mess with my styling, dangit. */
+	color:inherit;
+	text-decoration:none;
+}
+a:hover{
+	/* Don't mess with my styling, dangit. */
+	color:inherit;
+	text-decoration:none;
+}
+a:visited{
+	/* Don't mess with my styling, dangit. */
+	color:inherit;
+	text-decoration:none;
+}
+a:active{
+	/* Don't mess with my styling, dangit. */
+	color:inherit;
+	text-decoration:none;
+}
+a:link{
+	/* Don't mess with my styling, dangit. */
+	color:inherit;
+	text-decoration:none;
 }
