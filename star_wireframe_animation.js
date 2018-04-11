@@ -16,18 +16,25 @@
 !function(){
 	//CONFIGS
 	//------------------------
-		var z_index = -1;
-		var opacity = .5;
-		var color = "99,99,99";
+		var canvas_z_index = -1;
+		var canvas_opacity = .5;
+		
+		var animation_color = "99,99,99";
 		
 		var num_stars = 150; //WARNING: Set this too high and you'll really be feeling the lag.
 		
 		//How strongly the mouse attracts stars to itself.
 		var gravitational_pull = 0.0004;
+		
 		//The maximum speed of a new star.
 		var normal_star_max_speed = 1;
 		
-		//Slows stars that are going faster than the nomal max speed and are not near the mouse.
+		
+		//The square of the distance at which a point will notice nearby others.
+		var star_effective_radius = 6e3;
+		var mouse_effective_radius = 2e4;
+		
+		//Slows stars that are going faster than the normal max speed and are not near the mouse.
 		//Prevents an inadvertent slingshot maneuver from sending the whole screen into chaos.
 		//Increase to slow rogue stars faster.
 		var friction = 0.01; 
@@ -86,7 +93,7 @@
 						//Nearer points get thicker lines.
 						animation_context.lineWidth = proximity/2;
 						//Nearer points get darker lines.
-						animation_context.strokeStyle = "rgba("+color+","+(proximity+.2)+")";
+						animation_context.strokeStyle = "rgba("+animation_color+","+(proximity+.2)+")";
 						animation_context.moveTo(star.x,star.y);
 						animation_context.lineTo(point.x,point.y);
 						animation_context.stroke();
@@ -123,13 +130,13 @@
 	var request_animation_frame=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)};
 	
 	//Initialize mouse location.
-	var mouse_location={x:null,y:null,max:2e4};
+	var mouse_location={x:null,y:null,max:mouse_effective_radius};
 	
 	//Set the canvas's ID.
 	animation_canvas.id="star_wireframe_animation";
 	
 	//Set the canvas's CSS style.
-	animation_canvas.style.cssText="position:fixed;top:0;left:0;z-index:" + z_index + ";opacity:"+opacity;
+	animation_canvas.style.cssText="position:fixed;top:0;left:0;z-index:" + canvas_z_index + ";opacity:"+canvas_opacity;
 	
 	//Attach canvas to the end of the body element.
 	document.body.appendChild(animation_canvas);
@@ -148,6 +155,7 @@
 	
 	//Create array of stars.
 	var constellation=[];
+	
 	for(var s=0; s < num_stars; s++){
 		//Create initial stats for a new star.
 		var x_pos=Math.random()*animation_canvas.width;
@@ -155,7 +163,7 @@
 		var x_vel=(2*Math.random()-1)*normal_star_max_speed;
 		var y_vel=(2*Math.random()-1)*normal_star_max_speed;
 		//Add star to the constellation.
-		constellation.push({x:x_pos,y:y_pos,x_velocity:x_vel,y_velocity:y_vel,max:6e3})
+		constellation.push({x:x_pos,y:y_pos,x_velocity:x_vel,y_velocity:y_vel,max:star_effective_radius,color:null})
 	}
 	
 	//Start the animation rolling.
